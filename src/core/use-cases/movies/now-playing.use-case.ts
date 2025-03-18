@@ -1,4 +1,4 @@
-import { HttpAdapters } from "../../../config/adapters/http.adapters";
+import { HttpAdapters } from "../../../config/adapters/http/http.adapters";
 import { NowPlayingResponse } from "../../../infrastructure/interfaces/movie-db.responses";
 import { Movie } from '../../entities/movie.entity';
 
