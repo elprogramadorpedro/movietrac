@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screen/Home/HomeScreen';
-import { Details } from '../screen/details/Details';
+import { DetailsScreen } from '../screen/details/DetailsScreen';
+
 
 const Stack = createStackNavigator<RootStackParams>();
 
@@ -12,8 +13,7 @@ export type RootStackParams={
 export const Navigation=()=> {
   return (
     <Stack.Navigator
-    
-screenOptions={{
+     screenOptions={{
       headerShown:true
     }}
 
@@ -21,7 +21,7 @@ screenOptions={{
 
     >
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Details" component={Details} />
+      <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   );
 }
