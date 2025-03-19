@@ -1,7 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import { HttpAdapters } from './http.adapters';
 
-
 interface Options {
   baseUrl: string;
   params: Record<string,string>;

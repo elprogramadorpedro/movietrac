@@ -1,6 +1,4 @@
 export * from './movies/now-playing.use-case';
-
-export function moviesNewPlayingUseCases(movieDBFetcher: AxiosAdapter) {
-    throw new Error('Function not implemented.');
-}
-
+export * from './movies/popular.use-case';
+export * from './movies/top-rated.use-case';
+export * from './movies/upcoming.use-case';
