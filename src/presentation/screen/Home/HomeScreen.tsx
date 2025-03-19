@@ -9,7 +9,7 @@ import { HorizontalCaousel } from '../../movies/HorizontalCaousel';
 export const HomeScreen = () => {
   const {top} = useSafeAreaInsets();
 
-  const {isLoading, nowPlaying, popular, topRated, upcoming} = useMovies();
+  const {isLoading, nowPlaying, popular, topRated, upcoming, popularNextPage} = useMovies();
 
   if(isLoading){
     return (<Text>Loading...</Text>);
@@ -35,7 +35,7 @@ export const HomeScreen = () => {
         <HorizontalCaousel 
         movies={upcoming} 
         title="Proximamente"
-        loadNextPage={()=>console.log('fin alcanzado')}
+        loadNextPage={popularNextPage}
         
         />
 
