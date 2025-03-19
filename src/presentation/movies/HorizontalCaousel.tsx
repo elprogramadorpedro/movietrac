@@ -1,19 +1,50 @@
 
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useEffect, useRef } from 'react'
+import { View, Text, NativeSyntheticEvent, NativeScrollEvent } from 'react-native'
 import { Movie } from '../../core/entities/movie.entity';
 import { FlatList } from 'react-native-gesture-handler';
 import { MoviePoster } from './MoviePoster';
 
 
 interface Props{
-    //sintaxis
 movies:Movie[];
 title:string;
-
+loadNextPage?:()=>void;
 }
 
-export const HorizontalCaousel = ({movies, title}:Props) => {
+
+
+
+
+ 
+
+export const HorizontalCaousel = ({movies, title, loadNextPage}:Props) => {
+
+    const isLoading = useRef (false);
+    useEffect(() => {
+        isLoading.current = false;
+    }, [movies]);   
+    
+
+    const onScroll = (event:NativeSyntheticEvent<NativeScrollEvent>) => {
+
+        if (isLoading.current) return;
+        const { contentOffset, layoutMeasurement, contentSize } = event.nativeEvent;
+    
+        const isEnReached = contentOffset.x + layoutMeasurement.width >= contentSize.width;
+        if(!isEnReached) return;
+
+        isLoading.current = true;
+
+
+        //cargo la siguientes peliculas
+        loadNextPage && loadNextPage();
+
+
+    };
+
+
+
   return (
     <View
     style={{ height: title? 260:220 }}
@@ -45,6 +76,7 @@ renderItem={({item})=>(
 keyExtractor={(item)=>item.id.toString()}   
 horizontal
 showsHorizontalScrollIndicator={false}  
+onScroll={onScroll}
 />
 
 

@@ -32,7 +32,12 @@ export const HomeScreen = () => {
         <HorizontalCaousel movies={topRated} title="Populares"/>
 
         {/* Proximamente */}
-        <HorizontalCaousel movies={upcoming} title="Proximamente"/>
+        <HorizontalCaousel 
+        movies={upcoming} 
+        title="Proximamente"
+        loadNextPage={()=>console.log('fin alcanzado')}
+        
+        />
 
 
 
