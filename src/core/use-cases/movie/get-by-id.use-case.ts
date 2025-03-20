@@ -13,7 +13,7 @@ export const getMovieByIdUseCase =async (fetcher: HttpAdapters, MovieId: number)
         return fullMovie;
      
     } catch (error) {
-        
+        throw new Error(`Failed to fetch movie with ID ${MovieId}: ${error}`);
     }
 
 
