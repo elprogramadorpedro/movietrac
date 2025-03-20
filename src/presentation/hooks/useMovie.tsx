@@ -44,6 +44,7 @@ const loadMovie = async () => {
 
   return {
     isLoading,
-    movie
+    movie,
+    cast
   }
 }

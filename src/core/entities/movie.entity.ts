@@ -9,9 +9,10 @@ export interface Movie {
 }
 
 export interface FullMovie extends Movie {
+
   genres: string[];
   duration: number;
-  bugdet: number;
+  budget: number;
   originalTitle: string;
   productionCompanies: string[];
 }
