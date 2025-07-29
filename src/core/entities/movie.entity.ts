@@ -1,5 +1,4 @@
 export interface Movie {
-  movie: any;
   id: number;
   title: string;
   description: string;
@@ -9,7 +8,7 @@ export interface Movie {
 }
 
 export interface FullMovie extends Movie {
-
+  rating: number;
   genres: string[];
   duration: number;
   budget: number;
