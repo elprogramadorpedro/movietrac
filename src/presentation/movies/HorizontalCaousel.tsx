@@ -56,7 +56,8 @@ export const HorizontalCaousel = ({movies, title, loadNextPage}:Props) => {
                     fontSize: 30,
                     fontWeight: 'bold',
                     marginLeft: 10,
-                    marginBottom: 10
+                    marginBottom: 10,
+                    color: '#ff0000' // ✅ AGREGAR ESTA LÍNEA
                 }}
                 
                 >
